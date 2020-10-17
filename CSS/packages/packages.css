@@ -3,7 +3,7 @@ main {
 }
 
 .background {
-  background: url("../images/plans-background.jpg") center/cover;
+  background: url('../images/plans-background.jpg') center/cover;
   filter: blur(1px);
   width: 100vw;
   height: 100vh;
@@ -17,17 +17,26 @@ main {
   border: 4px solid #0e411f;
   border-left: none;
   position: relative;
+  overflow: hidden;
+}
+
+.package:hover {
+  animation: float-package 1s ease forwards;
 }
 
 .package__badge {
   position: absolute;
   top: 0;
   right: 0;
-  margin: 1.2rem;
+  margin: 0;
   font-size: 0.8rem;
   color: white;
   background: #ff5454;
   padding: 0.5rem;
+  transform: rotateZ(45deg) translateX(3.5rem) translateY(-0.8rem);
+  transform-origin: center;
+  width: 12rem;
+  text-align: center;
 }
 
 .package:hover,
@@ -52,7 +61,7 @@ main {
   border: 1px solid #0e411f;
   font-size: 1.2rem;
   background: white;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .clearfix {
@@ -102,5 +111,17 @@ main {
   #free:hover,
   #free:active {
     border-right-color: #ff5454;
+  }
+}
+
+@keyframes float-package {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-1.5rem);
+  }
+  100% {
+    transform: translateY(-1rem);
   }
 }
